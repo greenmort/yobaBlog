@@ -1,0 +1,66 @@
+{
+  "name": "yoba-blog",
+  "version": "1.0.0",
+  "description": "yoba blog",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
+    "watch": "webpack --watch",
+    "serve": "webpack-dev-server --content-base build/",
+    "format": "prettier --write --single-quote --print-width=120 webpack.config.js \"src/**/*.{js,jsx}\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:greenmort/yobaBlog.git"
+  },
+  "author": "Greenmort",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/greenmort/yobaBlog/issues"
+  },
+  "homepage": "https://greenmort.github.io/yobaBlog",
+  "dependencies": {
+    "axios": "^0.17.1",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.1",
+    "prop-types": "^15.6.0",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-redux": "^5.0.6",
+    "react-router-dom": "^4.2.2",
+    "redux": "^3.7.2",
+    "redux-promise": "^0.5.3",
+    "redux-thunk": "^2.2.0",
+    "styled-components": "^2.3.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-eslint": "^8.0.1",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-react": "^6.24.1",
+    "css-loader": "^0.28.7",
+    "eslint": "^4.10.0",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-config-prettier": "^2.7.0",
+    "eslint-loader": "^1.9.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-jsx-a11y": "^6.0.2",
+    "eslint-plugin-prettier": "^2.3.1",
+    "eslint-plugin-react": "^7.4.0",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "file-loader": "^1.1.5",
+    "gh-pages": "^1.1.0",
+    "image-webpack-loader": "^3.4.2",
+    "node-sass": "^4.5.3",
+    "prettier": "^1.8.2",
+    "sass-loader": "^6.0.6",
+    "style-loader": "^0.19.0",
+    "url-loader": "^0.6.2",
+    "webpack": "^3.8.1",
+    "webpack-dev-server": "^2.9.3"
+  }
+}
