@@ -5,8 +5,8 @@ import { createStore, applyMiddleware } from 'redux';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import ReduxThunk from 'redux-thunk';
 import ReduxPromise from 'redux-promise';
-import App from './components/app';
-import Page from './components/page';
+import PostIndex from './containers/post_index';
+import PostCreate from './containers/post_create';
 import Error from './components/error404';
 import reducers from './reducers/index';
 
@@ -19,8 +19,8 @@ class Application extends Component {
         <Router>
           <div className="App">
             <Switch>
-              <Route exact path="/" component={App} />
-              <Route path="/example" component={Page} />
+              <Route exact path="/" component={PostIndex} />
+              <Route path="/new" component={PostCreate} />
               <Route component={Error} />
             </Switch>
           </div>
