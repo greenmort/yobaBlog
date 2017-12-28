@@ -1,9 +1,11 @@
 .addPost{
-  float: right;
   margin: 30px 40px;
 }
 
 .list-group{
-  clear: both;
   margin: 10px 60px;
+
+  &-item{
+    margin: 0 20px;
+  }
 }

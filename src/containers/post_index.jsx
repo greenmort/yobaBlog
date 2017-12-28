@@ -9,22 +9,24 @@ class PostIndex extends Component {
     this.props.fetchPosts();
   }
 
-  renderPosts() {
+  renderPosts(){
     return this.props.posts.total.map(item =>
         <li className="list-group-item" key={item.id}>
-          <div>
-            <span>{item.categories}</span>
+          <Link to={`/posts/${item.id}`}>
+            <span className="pull-right">{item.categories}</span>
             <strong>{item.title}</strong>
-          </div>
+          </Link>
             </li>);
   }
 
   render() {
     return (
       <div>
-        <Link className="addPost btn btn-primary" to="/new">
-          Add post
-        </Link>
+          <div className="text-right">
+              <Link className="addPost btn btn-primary" to="/new">
+                  Add post
+              </Link>
+          </div>
         <ul className="list-group">{this.renderPosts()}</ul>
       </div>
     );
