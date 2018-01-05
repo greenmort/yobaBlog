@@ -11,7 +11,8 @@ const config = {
   },
   devServer: {
     historyApiFallback: true,
-    publicPath: '/build/'
+    publicPath: '/build/',
+    port: 3000
   },
   resolve: {
     extensions: ['.js', '.jsx', '.json']

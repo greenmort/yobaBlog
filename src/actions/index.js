@@ -16,17 +16,17 @@ function onGetIndex(response) {
 }
 
 function onGetPost(response) {
-    return {
-        type: FETCH_POST,
-        payload: response
-    };
+  return {
+    type: FETCH_POST,
+    payload: response
+  };
 }
 
 function onGetError(err) {
-    return {
-        type: NOT_FOUND,
-        payload: err
-    };
+  return {
+    type: NOT_FOUND,
+    payload: err
+  };
 }
 
 export function fetchPosts() {
@@ -44,33 +44,33 @@ export function fetchPosts() {
 }
 
 export function fetchPost(id) {
-    const url = `${ROOT_URL}/${id}?key=${API_KEY}`;
-    return function(dispatch) {
-        axios
-            .get(url)
-            .then(response => {
-                dispatch(onGetPost(response));
-            })
-            .catch(err => {
-                dispatch(onGetError(err));
-            });
-    };
+  const url = `${ROOT_URL}/${id}?key=${API_KEY}`;
+  return function(dispatch) {
+    axios
+      .get(url)
+      .then(response => {
+        dispatch(onGetPost(response));
+      })
+      .catch(err => {
+        dispatch(onGetError(err));
+      });
+  };
 }
 
 export function createPost(props) {
-    const url = `${ROOT_URL}?key=${API_KEY}`;
-    const response = axios.post(url, props);
-    return {
-        type: CREATE_POST,
-        payload: response
-    }
+  const url = `${ROOT_URL}?key=${API_KEY}`;
+  const response = axios.post(url, props);
+  return {
+    type: CREATE_POST,
+    payload: response
+  };
 }
 
 export function deletePost(id) {
-    const url = `${ROOT_URL}/${id}?key=${API_KEY}`;
-    const response = axios.delete(url);
-    return {
-        type: DELETE_POST,
-        payload: response
-    }
+  const url = `${ROOT_URL}/${id}?key=${API_KEY}`;
+  const response = axios.delete(url);
+  return {
+    type: DELETE_POST,
+    payload: response
+  };
 }

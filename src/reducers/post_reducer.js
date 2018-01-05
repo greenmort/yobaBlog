@@ -12,10 +12,10 @@ export default function(state = INITIAL_STATE, action) {
         ...state,
         total: action.payload.data
       };
-      case FETCH_POST:
-        return{
-            ...state,
-            current: action.payload.data
+    case FETCH_POST:
+      return {
+        ...state,
+        current: action.payload.data
       };
     default:
       return state;
